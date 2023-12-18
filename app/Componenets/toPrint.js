@@ -5,6 +5,8 @@ import rep2 from '../../images/rep2.jpg';
 import rep1 from '../../images/rep1.jpg';
 import rep3 from '../../images/rep3.png';
 import rep4 from '../../images/rep4.jpeg';
+import rep5 from '../../images/rep5.jpeg';
+
 
 
 export const ComponentToPrint = React.forwardRef((props, ref) => {
@@ -170,9 +172,9 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                <div className="flex w-full justify-center text-xs mb-3">
+                <div className="flex w-full justify-center">
                     <div>
-                        <table className="invoic_table_Prop1 mt-3">
+                        <table className="invoic_table_Prop1 mt-1">
                             <tbody>
                                 <tr>
                                     <td><p className="text-center">كان مدعوا</p></td>
@@ -195,9 +197,9 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                <div className="flex w-full justify-end border-t-2 border-[#a1a1aa]">
+                <div className="flex w-full justify-end">
                     <div className="text-xs">
-                        <p>أضف______________ بمبلغ __________التوقيع____________</p>
+                        <p>أضف______________ بالكمية __________التوقيع____________</p>
                     </div>
                 </div>
 
@@ -303,8 +305,8 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                                     <p className="smtextin">מפעלי בטון וטיט עם משאבות</p></td>
                                 <td><Image
                                     className="rounded-lg"
-                                    src={rep4}
-                                    width={70}
+                                    src={rep5}
+                                    width={110}
                                 /></td>
                                 <td><p className="smtextin">משרד ראשי ברטעה</p>
                                     <p className="smtextin">מספר המשרד : 0542253326</p>
@@ -351,7 +353,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div> */}
 
-                <div className="flex w-full justify-between text-xs invoic_propr mb-2">
+                <div className="flex w-full justify-between invoic_propr mb-2">
                     <div>
                         <p>לכבוד : </p>
                     </div>
@@ -365,7 +367,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                <div className="flex w-full justify-between smtextin">
+                <div className="flex w-full justify-between">
                     <div className="invoic_propr">
                         <table>
                             <tbody>
@@ -412,7 +414,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
 
                     <div className="smtextin">
-                        <table className="invoic_table ">
+                        <table className="invoic_table">
                             <tbody>
                                 <tr>
                                     <th>יצאה בשעה</th>
@@ -435,9 +437,9 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                <div className="flex w-full justify-center mb-3">
+                <div className="flex w-full justify-center">
                     <div>
-                        <table className="invoic_table_Prop1 mt-3">
+                        <table className="invoic_table_Prop1 mt-1">
                             <tbody>
                                 <tr>
                                     <td><p className="text-center">הוזמן</p></td>
@@ -460,7 +462,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                <div className="flex w-full justify-end border-t-2 border-[#a1a1aa]">
+                <div className="flex w-full justify-end">
                     <div className="text-xs">
                         <p>הוסף_____________ בכמות__________חתימה____________</p>
                     </div>
@@ -478,14 +480,13 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                         <p>ד. לבטון לא נוספו מים או חומר אחר לפי דרישת המקבל או על ידו.</p>
                     </div>
                     <div className="">
-                        <p className="ivoic_p">דרגת חשיפה _______</p>
+                        <p className="ivoic_p">דרגת חשיפה _____________</p>
                     </div>
-                    <div className="text-xs">
+                    <div>
                         <table className="invoic_table">
                             <tbody>
                                 <tr>
                                     <th colSpan={3}><p>המעבדה הבודקת</p></th>
-
                                 </tr>
                                 <tr>
                                     <td><p>מעבדה</p></td>
@@ -514,7 +515,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                     </div>
                 </div>
 
-                <div className="smalling_text_1 flex w-full justify-between text-xs mt-1 invoic_propr items-center">  
+                <div className="smalling_text_1 flex w-full justify-between mt-1 invoic_propr items-center">  
                     <div>
                         <p>הערות הנהג ________________________________________________</p>
                     </div>
@@ -528,7 +529,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                         <p>הערות הלקוח ________________________________________________</p>
                     </div>
                 </div>
-                <div className="smalling_text_1 flex w-full justify-between text-xs invoic_propr">  
+                <div className="smalling_text_1 flex w-full justify-between invoic_propr">  
                     <div>
                         <p>שם המקבל ______________________________________</p>
                     </div>
@@ -541,7 +542,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                         <p>תפקיד ______________________________________</p>
                     </div>
                 </div>
-                <div className="smalling_text_1 flex w-full justify-between text-xs ">  
+                <div className="smalling_text_1 flex w-full justify-between">  
                     <div>
                         <p>תעודה זו כפופה לתנאי האספקה של החברה כמפורט בהצעה לאספקת בטון מונא. התעודה מהווה שטר מטען ואחריות המקבל היא בהתאם לתתה בין המקבל לבין החברה.</p>
                     </div>

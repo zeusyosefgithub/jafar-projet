@@ -1,17 +1,23 @@
 import { list } from "postcss";
 import { GetTrucks } from "./getDocs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import EditBoard from "./editBoard";
 
 export default function AllLists(props) {
 
-    let theList = GetTrucks(props.wichList);
+    let theList = GetTrucks("invoices");
     let theList1 = GetTrucks("concert pumps");
     let theList2 = GetTrucks("drivers");
     let theList3 = GetTrucks("trucks");
     let theList4 = GetTrucks("customers");
     let count = 1;
 
-    const [showInvoEdit,setShowInvoEdit] = useState();
+    // useEffect(() => {
+    //     theList;
+    // },[theList])
+
+    const [showInvoEdit,setShowInvoEdit] = useState(false);
+    const [invData,setInvData] = useState({});
 
     return (
         <div className="rounded-3xl bg-[#f5f5f5] border-2 border-[#334155] p-10">
@@ -40,7 +46,7 @@ export default function AllLists(props) {
                                     </tr>
                                     {
                                         theList.map(list => {
-                                            return <tr onClick={() => setShowInvoEdit(true)} className="styling_lines_lists bordering_list">
+                                            return <tr onClick={() => {setShowInvoEdit(true);setInvData(list)}} className="styling_lines_lists bordering_list">
                                                 <th className="text-base">{list.invoices_kind_supplier_number}</th>
                                                 <th className="text-base">{list.invoices_concretd_grade}</th>
                                                 <th className="text-base">{list.invoices_kind_egree_of_Exposure}</th>
@@ -56,8 +62,12 @@ export default function AllLists(props) {
                                                 <th className="text-base">{list.invoices_customer_name}</th>
                                                 <th className="text-base">{list.invoices_customer_id}</th>
                                                 <th className="text-base">{count++}</th>
+                                                
                                             </tr>
                                         })
+                                    }
+                                    {
+                                        showInvoEdit ? <EditBoard showInv={() => setShowInvoEdit(false)} data={invData} /> : null
                                     }
                                 </tbody>
                             </table>
@@ -93,37 +103,80 @@ export default function AllLists(props) {
                         props.wichList == "drivers" ?
                             <div>
                                 <div className="text-end text-2xl mb-7">جميع السائقين الذين تم ادخالهم</div>
-                                <div className="w-full overflow-scroll hight_for_table_list">
-                                    <table className="w-full">
-                                        <tbody>
-                                            <tr>
-                                                <th className="text-xl">ملاحظات</th>
-                                                <th className="text-xl">اسم السائق</th>
-                                                <th className="text-xl">رقم السائق</th>
-                                            </tr>
-                                            {
-                                                theList2.map(list => {
-                                                    return <tr className="pointer_line">
-                                                        <th className="text-base">{list.driver_disc}</th>
-                                                        <th className="text-base">{list.driver_name}</th>
-                                                        <th className="text-base">{list.driver_id}</th>
-                                                        <th className="text-base">{count++}</th>
-                                                    </tr>
-                                                })
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    <div className="w-full overflow-scroll hight_for_table_list">
+                                        <table className="w-full">
+                                            <tbody>
+                                                <tr>
+                                                    <th className="text-xl">ملاحظات</th>
+                                                    <th className="text-xl">اسم السائق</th>
+                                                    <th className="text-xl">رقم السائق</th>
+                                                </tr>
+                                                {
+                                                    theList2.map(list => {
+                                                        return <tr className="pointer_line">
+                                                            <th className="text-base">{list.driver_disc}</th>
+                                                            <th className="text-base">{list.driver_name}</th>
+                                                            <th className="text-base">{list.driver_id}</th>
+                                                            <th className="text-base">{count++}</th>
+                                                        </tr>
+                                                    })
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
                             </div>
                             :
                             props.wichList == "trucks" ?
                                 <div>
-                                    <div className="text-end">جميع الشاحنات التي تم ادخالها</div>
-                                    
+                                    <div className="text-end text-2xl mb-7">جميع الشاحنات التي تم ادخالها</div>
+                                    <div className="w-full overflow-scroll hight_for_table_list">
+                                        <table className="w-full">
+                                            <tbody>
+                                                <tr>
+                                                    <th className="text-xl">ملاحظات</th>
+                                                    <th className="text-xl">اسم سائق الشاحنة</th>
+                                                    <th className="text-xl">رقم الشاحنة</th>
+                                                </tr>
+                                                {
+                                                    theList3.map(list => {
+                                                        return <tr className="pointer_line">
+                                                            <th className="text-base">{list.truck_disc}</th>
+                                                            <th className="text-base">{list.truck_driver}</th>
+                                                            <th className="text-base">{list.truck_id}</th>
+                                                            <th className="text-base">{count++}</th>
+                                                        </tr>
+                                                    })
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 :
                                 <div>
-                                    <div className="text-end">34</div>
+                                    <div className="text-end text-2xl mb-7">34</div>
+                                        <div className="w-full overflow-scroll hight_for_table_list">
+                                            <table className="w-full">
+                                                <tbody>
+                                                    <tr>
+                                                        <th className="text-xl">العنوان</th>
+                                                        <th className="text-xl">الشارع</th>
+                                                        <th className="text-xl">اسم الزبون</th>
+                                                        <th className="text-xl">رقم الزبون</th>
+                                                    </tr>
+                                                    {
+                                                        theList4.map(list => {
+                                                            return <tr className="pointer_line">
+                                                                <th className="text-base">{list.customer_city}</th>
+                                                                <th className="text-base">{list.customer_street}</th>
+                                                                <th className="text-base">{list.customer_name}</th>
+                                                                <th className="text-base">{list.customer_id}</th>
+                                                                <th className="text-base">{count++}</th>
+                                                            </tr>
+                                                        })
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
                                 </div>
             }
         </div>

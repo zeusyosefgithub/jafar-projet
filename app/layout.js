@@ -7,6 +7,7 @@ import { IoListSharp } from "react-icons/io5";
 import { GrUserAdmin } from "react-icons/gr";
 import { FaFileInvoiceDollar } from "react-icons/fa6";
 import rep4 from "../images/rep4.jpeg";
+import rep5 from "../images/rep5.jpeg";
 import Image from 'next/image';
 
 
@@ -54,8 +55,9 @@ export default function RootLayout({ children }) {
 
           <div><Image
             className="rounded-lg"
-            src={rep4}
-            width={90}
+            src={rep5}
+            width={110}
+            
           /></div>
         </div>
 

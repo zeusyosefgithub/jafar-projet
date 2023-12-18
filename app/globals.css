@@ -41,28 +41,33 @@ body {
 .invoic_table_Prop1 td,th {
   border: 1px solid #dddddd;
   text-align: center;
-  font-size: 9px;
+  font-size: 11px;
+  font-weight: bold;
   padding: 9px;
 }
 
 .invoic_table td, th {
   border: 1px solid #dddddd;
   text-align: center;
-  font-size: 9px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .invoic_propr{
-  font-family: arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold !important;
+  font-size: 13px !important;
 }
 
 .ivoic_p{
   padding: 5px;
-  padding-top: 15px;
+  padding-top: 10px;
   width: 120px;
   font-family: arial, sans-serif;
   margin-left: 10px;
   border: 1px solid #dddddd;
-  font-size: 10px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 
@@ -163,21 +168,22 @@ body {
   font-weight: bolder;
   color: white;
 }
-.smalling_text{
-  font-size: 8px;
-}
+
 
 .smtextin{
-  font-size: 9px !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
 }
 
-.smtextin2{
+.smalling_text p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 9px;
 }
-
 .smalling_text_1 p {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-weight: bold;
+  font-size: 9px;
 }
 
 .hight_for_table_list{

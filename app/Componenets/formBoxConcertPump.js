@@ -7,13 +7,13 @@ export default function FormBoxConcertPump(props) {
     let count = 1;
 
     return (
-        <div className="w-full md:w-1/2 mx-auto absolute z-10 right-0 left-0 border-2 border-[#334155] rounded-xl">
+        <div className="w-full md:w-1/2 mx-auto fixed z-10 top-28 right-0 left-0 border-2 border-[#334155] rounded-xl">
             <div className="flex flex-col p-5 rounded-lg shadow bg-[#f5f5f5]">
                 <div className="flex flex-col items-center text-center">
                     <h2 className="mt-2 font-semibold text-black text-xl">قائمة المضخات (משאבות)</h2>
                     <p className="mt-2 text-sm text-black leading-relaxed w-full text-right text-xl">اختر مضخة من القائمة لديك</p>
                 </div>
-                <div className="m-1 p-5 bg-white rounded-xl overflow-scroll h-96">
+                <div className="m-1 p-5 bg-white rounded-xl overflow-scroll h-72">
                     <table className="w-full text-center">
                         <tbody>
                             <tr className="border-4 border-[#334155]">
